@@ -10,12 +10,28 @@ Create an array of strings called `colors` that contain "orange", "red", "yellow
 
 Then, using array subscripting and string interpolation, print out the String `"orange, yellow, and lavender are some of my favorite colors"`.
 
+```
+Question #1 Answer
+
+var colors = ["orange", "red", "yellow", "turquoise", "lavender"]
+print("\(colors[0]), \(colors[2], and \(colors[4]) are some of my favorite colors.")
+
+```
+
 
 ## Question 2
 
 Remove "Illinois" and "Kansas" from the array below.
 
 `var westernStates = ["California", "Oregon", "Washington", "Idaho", "Illinois", "Kansas"]`
+
+```
+Question #2 Answer
+
+westernStates.popLast()
+westernStates.popLast()
+
+```
 
 
 ## Question 3
@@ -24,6 +40,18 @@ Iterate through the array below. For each state, print out the name of the state
 
 `let moreStates = ["Hawaii", "New Mexico", "Alaska", "Montana", "Texas", "New York", "Florida"]`
 
+```
+Question #3 Answer
+
+for state in moreStates{
+    if(state == "Hawaii" || state == "Alaska"){
+        print("\(state) is not in the continental United States.")
+    } else {
+        print("\(state) is in the continental United States.")
+    }
+}
+
+```
 
 ## Question 4
 
@@ -35,6 +63,21 @@ Iterate through the array below. For each sentence, print out how many non-white
 
 `let myFavoriteQuotes = ["To be or not to be, that is the question.", "The only source of knowledge is experience.", "Mr. Gorbachev, tear down this wall!", "Four score and twenty years ago..."]`
 
+```
+Question #4 Answer
+
+var nonWhiteCharacters = 0
+
+for char in myString{
+    if(char == "\u{0020}"){
+
+    } else {
+        nonWhiteCharacters += 1
+    }
+}
+
+print("There are \(nonWhiteCharacters) non white characters in the string.")
+```
 
 ## Question 5
 
@@ -43,6 +86,21 @@ Iterate through `garden` and place any 🌷 that you find into the `basket`. Rep
 ```swift
 var garden = ["dirt","🌷","dirt","🌷","dirt","dirt","🌷","dirt","🌷","dirt"]
 var basket = [String]()
+```
+```
+Question #5 Answer
+
+var flowers = garden[1]
+
+for index in 0..<garden.count{
+    if(garden[index] == flowers){
+        basket.append(garden[index])
+        garden[index] = "dirt"
+    }
+}
+
+print("There are \(basket.count) flowers in my basket.")
+
 ```
 
 ## Question 6
@@ -55,6 +113,18 @@ The below array represents an unfinished batting lineup for a baseball team. **Y
 - Put "Reyes" to bat 8th instead.
 
 `var battingLineup = ["Reyes", "Jeter", "Ramirez", "Pujols","Griffey","Thomas","Jones", "Rodriguez"]`
+
+```
+Question #6 Answer
+
+battingLineup.append("Suzuki") //Add Suzuki to the end
+battingLineup[1] = "Tejada" // Switch Jeter for Tejada
+battingLineup[5] = "Guerrero" // Switch Thomas for Guerrero
+
+//Put Reyes 8th instead
+var stringTemp = battingLineup.remove(at:0)
+battingLineup.insert(stringTemp, at: 7)
+```
 
 
 ## Question 7
@@ -90,6 +160,20 @@ target = 3
 //false
 ```
 
+```
+Question #7 Answer
+
+var containsTarget = false
+
+for number in numbers{
+    if(number == target){
+        containsTarget = true
+        break
+        }
+}
+
+```
+
 
 ## Question 8
 
@@ -99,6 +183,19 @@ Find the largest value in an array of Int.  Do not use the built-in `max()` meth
 let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int($0)}
 
 //This creates an array of 100 numbers in between 0 and 200.  For now, you don't need to worry about how it does that.
+```
+
+```
+Question #8 Answer
+
+var maxValue: Int = arrayOfNumbers[0]
+
+for number in arrayOfNumbers{
+    if(number > maxValue){
+        maxValue = number
+        }
+}
+
 ```
 
 
@@ -111,7 +208,18 @@ let arrayOfNumbers: [Int] = (1...100).map{ _ in Int.random(in: 0...200)}.map{Int
 
 //This creates an array of 100 numbers in between 0 and 200.  For now, you don't need to worry about how it does that.
 ```
+```
+Question #9 Answer
 
+var minValue: Int = arrayOfNumbers[0]
+
+for number in arrayOfNumbers{
+    if(number < minValue){
+        minValue = number
+        }
+}
+
+```
 
 ## Question 10
 
@@ -119,6 +227,15 @@ Iterate through `secondListOfNumbers`, and print out all the odd numbers.
 
 `var secondListOfNumbers = [19,13,14,19,101,10000,141,404]`
 
+```
+Question #10 Answers
+
+for number in secondListOfNumbers{
+    if(number % 2 == 1){
+        print(number)
+        }
+}
+```
 
 ## Question 11
 
@@ -126,12 +243,37 @@ Iterate through `thirdListOfNumbers`, and print out the sum.
 
 `var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]`
 
+```
+Question #11 Answers
+
+var sum = 0
+
+for number in thirdListOfNumbers{
+    sum += number
+}
+
+print("The sum of all numbers in thirdListOfNumbers is \(sum).")
+```
 
 ## Question 12
 
 Iterate through `thirdListOfNumbers`, and print out the sum of all the even numbers.
 
 `var thirdListOfNumbers = [11, 26, 49, 61, 25, 40, 74, 3, 22, 23]`
+
+```
+Question #12 Answers
+
+var sum = 0
+
+for number in thirdListOfNumbers{
+    if( number % 2 == 0){
+        sum += number
+    }
+}
+
+print("The sum of all even numbers in thirdListOfNumbers is \(sum).")
+```
 
 
 ## Question 13
@@ -142,6 +284,20 @@ Append every Int that appears in both `listOne` and `listTwo` to the `sharedElem
 var listOne = [28, 64, 7, 96, 13, 32, 94, 11, 80, 68]
 var listTwo = [18, 94, 48, 6, 42, 68, 79, 76, 13, 7]
 var sharedElements = [Int]()
+```
+
+```
+Question #13 Answer
+
+for ones in listOne{
+    for twos in listTwo{
+        if(ones == twos){
+            sharedElements.append(ones)
+        }
+    }
+}
+
+print(sharedElements)
 ```
 
 # Part 2
