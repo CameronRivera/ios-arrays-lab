@@ -14,7 +14,7 @@ Then, using array subscripting and string interpolation, print out the String `"
 Question #1 Answer
 
 var colors = ["orange", "red", "yellow", "turquoise", "lavender"]
-print("\(colors[0]), \(colors[2], and \(colors[4]) are some of my favorite colors.")
+print("\(colors[0]), \(colors[2]), and \(colors[4]) are some of my favorite colors.")
 
 ```
 
